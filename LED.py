@@ -1,10 +1,11 @@
 import pyfirmata
 import time
 
-pin = 13                     # pin number for LED
+pin = 13             # pin number for LED
 port = "COM3"        # Port number
 board = pyfirmata.Arduino(port)
 
+# Uncomment this to run for one time with 5 secs time interval
 # One time
 '''
 print("ON")                 
@@ -16,6 +17,7 @@ print("OFF")
 board.digital[pin].write(0)                     # Turn off
 
 '''
+
 # Infinite loop
 while 1:                  
     print("ON")
@@ -25,4 +27,3 @@ while 1:
     print("OFF")
     board.digital[pin].write(0)               # Turn OFF
     time.sleep(1)
-
